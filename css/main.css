@@ -37,6 +37,7 @@ nav {
   background-color: var(--nav-background-color);
   border-radius: 0 0 10px 10px;
   transition: top 0.2s ease-in-out;
+
   font-weight: bold;
 }
 

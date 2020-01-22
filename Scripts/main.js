@@ -3,13 +3,15 @@ let cart = {
   totalItems: 0,
   totalPrice: 0
 };
-//Items prices, easey to change
+
+//Items prices
 let itemPrices = {
   redMousepad: 19.99,
   greenMousepad: 22.99,
   blueMousepad: 12.99,
   orangeMousepad: 15.99
 };
+
 //Variable Price and button to buy every mousepad
 let shoppingCart = document.getElementById("shoppingCart");
 let itemsInCart = document.getElementById("itemsInCart");
@@ -85,6 +87,7 @@ orangeBuy.addEventListener("click", () => {
   }
 });
 
+//Removing everything from cart
 clearCart.addEventListener("click", () => {
   cart.totalItems = 0;
   cart.totalPrice = 0;
@@ -93,7 +96,13 @@ clearCart.addEventListener("click", () => {
   itemsInCart.innerHTML = cart.totalItems;
 });
 
+//Opening and closing nav
+
 cross.addEventListener("click", () => {
+  openCloseNav();
+});
+
+function openCloseNav() {
   if (navOpen === false) {
     cross.classList.add("close");
     openNav();
@@ -103,7 +112,7 @@ cross.addEventListener("click", () => {
     closeNav();
     navOpen = false;
   }
-});
+}
 
 function openNav() {
   nav.style.top = "0px";
