@@ -29,11 +29,17 @@ let orangePrice = document.getElementById("orangePrice");
 //Variable to clear cart
 let clearCart = document.getElementById("clearCart");
 
+//Open and close nav variable
+let cross = document.querySelector(".cross");
+let navOpen = false;
+let nav = document.getElementById("nav");
+
 //Setting prices on pricetags when page is loaded
 window.onload = redPrice.innerHTML = itemPrices.redMousepad + "$";
 window.onload = greenPrice.innerHTML = itemPrices.greenMousepad + "$";
 window.onload = bluePrice.innerHTML = itemPrices.blueMousepad + "$";
 window.onload = orangePrice.innerHTML = itemPrices.orangeMousepad + "$";
+window.onload = closeNav();
 
 //Adding red mousepad to cart
 redBuy.addEventListener("click", () => {
@@ -86,3 +92,22 @@ clearCart.addEventListener("click", () => {
   itemsInCart.classList.add("totalItems-display");
   itemsInCart.innerHTML = cart.totalItems;
 });
+
+cross.addEventListener("click", () => {
+  if (navOpen === false) {
+    cross.classList.add("close");
+    openNav();
+    navOpen = true;
+  } else {
+    cross.classList.remove("close");
+    closeNav();
+    navOpen = false;
+  }
+});
+
+function openNav() {
+  nav.style.top = "0px";
+}
+function closeNav() {
+  nav.style.top = "-10vh";
+}

@@ -7,7 +7,6 @@
   outline: none;
   font-family: "Roboto", sans-serif;
   user-select: none;
-  overflow-x: hidden;
 
   /*COLORS*/
   --text-color: #16a085;
@@ -19,28 +18,81 @@
 
 body {
   background-color: var(--background-color);
+  overflow: hidden;
+}
+
+.container-nav {
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
 }
 
 nav {
   position: fixed;
-  width: 100vw;
-  height: 5vh;
+  width: 50vw;
+  height: 10vh;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   background-color: var(--nav-background-color);
+  border-radius: 0 0 10px 10px;
+  transition: top 0.2s ease-in-out;
+  font-weight: bold;
 }
 
 nav ul {
   display: flex;
+  align-items: center;
+  justify-content: center;
   list-style: none;
 }
 
 nav li {
-  margin-right: 40px;
+  margin-right: 20px;
+  margin-left: 20px;
 }
+
+nav .button-li {
+  color: var(--text-color);
+}
+
+nav .button-li:hover {
+  filter: brightness(110%);
+  cursor: pointer;
+}
+
 nav a:hover {
   filter: brightness(110%);
+}
+
+.cross {
+  position: absolute;
+  width: 30px;
+  cursor: pointer;
+  top: 11vh;
+}
+
+.cross:after,
+.cross:before,
+.cross .closeOpenCross {
+  background-color: #fff;
+  border-radius: 3px;
+  content: " ";
+  display: block;
+  height: 5px;
+  margin: 7px 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.close:before {
+  transform: translateY(12px) rotate(45deg);
+}
+.close:after {
+  transform: translateY(-12px) rotate(-45deg);
+}
+
+.close .closeOpenCross {
+  transform: scale(0);
 }
 
 main {
