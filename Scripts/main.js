@@ -1,6 +1,6 @@
 //Cart, amount of items in cart and total price of them
 let cart = {
-  totalItems: 0,
+  totalItems: localStorage.getItem("storageTotalItems"),
   totalPrice: 0
 };
 
@@ -11,6 +11,9 @@ let itemPrices = {
   blueMousepad: 12.99,
   orangeMousepad: 15.99
 };
+
+//Localstorage
+
 
 //Variable Price and button to buy every mousepad
 let shoppingCart = document.getElementById("shoppingCart");
@@ -44,6 +47,8 @@ let nav = document.getElementById("nav");
 var navbar;
 
 window.onload = closeNav();
+window.onload = cart.totalItems = localStorage.getItem("storageTotalItems");
+window.onload = checkCart();
 window.onload = redPrice.textContent = itemPrices.redMousepad + "$";
 window.onload = greenPrice.textContent = itemPrices.greenMousepad + "$";
 window.onload = bluePrice.textContent = itemPrices.blueMousepad + "$";
@@ -54,6 +59,14 @@ window.onload = orangePrice.textContent = itemPrices.orangeMousepad + "$";
 redBuy.addEventListener("click", () => {
   cart.totalItems++;
   cart.totalPrice += itemPrices.redMousepad;
+  
+  if (typeof(Storage) !== "undefined") {
+    if (localStorage.storageTotalItems) {
+      localStorage.storageTotalItems = Number(localStorage.storageTotalItems)+1;
+    } else {
+      localStorage.storageTotalItems = 1;
+    }
+  }
   if (cart.totalItems > 0) {
     shoppingCart.classList.remove("empty");
     itemsInCart.classList.remove("totalItems-display");
@@ -65,6 +78,15 @@ redBuy.addEventListener("click", () => {
 greenBuy.addEventListener("click", () => {
   cart.totalItems++;
   cart.totalPrice += itemPrices.greenMousepad;
+
+  if (typeof(Storage) !== "undefined") {
+    if (localStorage.storageTotalItems) {
+      localStorage.storageTotalItems = Number(localStorage.storageTotalItems)+1;
+    } else {
+      localStorage.storageTotalItems = 1;
+    }
+  }
+
   if (cart.totalItems > 0) {
     shoppingCart.classList.remove("empty");
     itemsInCart.classList.remove("totalItems-display");
@@ -76,6 +98,13 @@ greenBuy.addEventListener("click", () => {
 blueBuy.addEventListener("click", () => {
   cart.totalItems++;
   cart.totalPrice += itemPrices.blueMousepad;
+  if (typeof(Storage) !== "undefined") {
+    if (localStorage.storageTotalItems) {
+      localStorage.storageTotalItems = Number(localStorage.storageTotalItems)+1;
+    } else {
+      localStorage.storageTotalItems = 1;
+    }
+  }
   if (cart.totalItems > 0) {
     shoppingCart.classList.remove("empty");
     itemsInCart.classList.remove("totalItems-display");
@@ -87,6 +116,13 @@ blueBuy.addEventListener("click", () => {
 orangeBuy.addEventListener("click", () => {
   cart.totalItems++;
   cart.totalPrice += itemPrices.orangeMousepad;
+  if (typeof(Storage) !== "undefined") {
+    if (localStorage.storageTotalItems) {
+      localStorage.storageTotalItems = Number(localStorage.storageTotalItems)+1;
+    } else {
+      localStorage.storageTotalItems = 1;
+    }
+  }
   if (cart.totalItems > 0) {
     shoppingCart.classList.remove("empty");
     itemsInCart.classList.remove("totalItems-display");
@@ -101,6 +137,7 @@ clearCart.addEventListener("click", () => {
   shoppingCart.classList.add("empty");
   itemsInCart.classList.add("totalItems-display");
   itemsInCart.innerHTML = cart.totalItems;
+  localStorage.clear();
 });
 
 //Opening and closing nav
@@ -178,4 +215,12 @@ function openNav() {
 }
 function closeNav() {
   nav.style.top = "-10vh";
+}
+
+function checkCart(){
+  if (cart.totalItems > 0) {
+    shoppingCart.classList.remove("empty");
+    itemsInCart.classList.remove("totalItems-display");
+    itemsInCart.innerHTML = cart.totalItems;
+  }
 }
