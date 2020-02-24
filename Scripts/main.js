@@ -131,14 +131,14 @@ orangeBuy.addEventListener("click", () => {
 });
 
 //Removing everything from cart
-clearCart.addEventListener("click", () => {
+function ClearCart(){
   cart.totalItems = 0;
   cart.totalPrice = 0;
   shoppingCart.classList.add("empty");
   itemsInCart.classList.add("totalItems-display");
   itemsInCart.innerHTML = cart.totalItems;
   localStorage.clear();
-});
+}
 
 //Opening and closing nav
 cross.addEventListener("click", () => {
