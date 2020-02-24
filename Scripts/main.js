@@ -33,15 +33,22 @@ let clearCart = document.getElementById("clearCart");
 
 //Open and close nav variable
 let cross = document.querySelector(".cross");
+let greenCross = document.querySelector(".greenCross");
+let blueCross = document.querySelector(".blueCross");
+let redCross = document.querySelector(".redCross");
+let orangeCross = document.querySelector(".orangeCross");
+
 let navOpen = false;
 let nav = document.getElementById("nav");
 
-//Setting prices on pricetags when page is loaded
-window.onload = redPrice.innerHTML = itemPrices.redMousepad + "$";
-window.onload = greenPrice.innerHTML = itemPrices.greenMousepad + "$";
-window.onload = bluePrice.innerHTML = itemPrices.blueMousepad + "$";
-window.onload = orangePrice.innerHTML = itemPrices.orangeMousepad + "$";
+var navbar;
+
 window.onload = closeNav();
+window.onload = redPrice.textContent = itemPrices.redMousepad + "$";
+window.onload = greenPrice.textContent = itemPrices.greenMousepad + "$";
+window.onload = bluePrice.textContent = itemPrices.blueMousepad + "$";
+window.onload = orangePrice.textContent = itemPrices.orangeMousepad + "$";
+//window.onload = setInterval(getCrosses, 25);
 
 //Adding red mousepad to cart
 redBuy.addEventListener("click", () => {
@@ -97,20 +104,72 @@ clearCart.addEventListener("click", () => {
 });
 
 //Opening and closing nav
-
 cross.addEventListener("click", () => {
   openCloseNav();
 });
 
 function openCloseNav() {
   if (navOpen === false) {
-    cross.classList.add("close");
-    openNav();
-    navOpen = true;
+      cross.classList.add("close");
+      openNav();
+      navOpen = true;
+    
   } else {
-    cross.classList.remove("close");
-    closeNav();
-    navOpen = false;
+      cross.classList.remove("close");
+      closeNav();
+      navOpen = false;
+  }
+}
+
+function openCloseGreenNav() {
+  if (navOpen === false) {
+      greenCross.classList.add("close");
+      openNav();
+      navOpen = true;
+    
+  } else {
+      greenCross.classList.remove("close");
+      closeNav();
+      navOpen = false;
+  }
+}
+
+function openCloseBlueNav() {
+  if (navOpen === false) {
+      blueCross.classList.add("close");
+      openNav();
+      navOpen = true;
+    
+  } else {
+      blueCross.classList.remove("close");
+      closeNav();
+      navOpen = false;
+  }
+}
+
+function openCloseRedNav() {
+  if (navOpen === false) {
+      redCross.classList.add("close");
+      openNav();
+      navOpen = true;
+    
+  } else {
+      redCross.classList.remove("close");
+      closeNav();
+      navOpen = false;
+  }
+}
+
+function openCloseOrangeNav() {
+  if (navOpen === false) {
+      orangeCross.classList.add("close");
+      openNav();
+      navOpen = true;
+    
+  } else {
+      orangeCross.classList.remove("close");
+      closeNav();
+      navOpen = false;
   }
 }
 

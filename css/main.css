@@ -25,6 +25,7 @@ body {
   display: flex;
   justify-content: center;
   flex-direction: row-reverse;
+  z-index: 1;
 }
 
 nav {
@@ -37,7 +38,6 @@ nav {
   background-color: var(--nav-background-color);
   border-radius: 0 0 10px 10px;
   transition: top 0.2s ease-in-out;
-
   font-weight: bold;
 }
 
@@ -76,7 +76,90 @@ nav a:hover {
 .cross:after,
 .cross:before,
 .cross .closeOpenCross {
-  background-color: #fff;
+  background-color: #000;
+  border-radius: 3px;
+  content: " ";
+  display: block;
+  height: 5px;
+  margin: 7px 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.close:before {
+  transform: translateY(12px) rotate(45deg);
+}
+.close:after {
+  transform: translateY(-12px) rotate(-45deg);
+}
+
+.greenCross {
+  position: absolute;
+  width: 30px;
+  cursor: pointer;
+  top: 11vh;
+}
+
+.greenCross:after,
+.greenCross:before,
+.greenCross .closeOpenCross {
+  background-color: #000;
+  border-radius: 3px;
+  content: " ";
+  display: block;
+  height: 5px;
+  margin: 7px 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.blueCross {
+  position: absolute;
+  width: 30px;
+  cursor: pointer;
+  top: 11vh;
+}
+
+.blueCross:after,
+.blueCross:before,
+.blueCross .closeOpenCross {
+  background-color: #000;
+  border-radius: 3px;
+  content: " ";
+  display: block;
+  height: 5px;
+  margin: 7px 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.redCross {
+  position: absolute;
+  width: 30px;
+  cursor: pointer;
+  top: 11vh;
+}
+
+.redCross:after,
+.redCross:before,
+.redCross .closeOpenCross {
+  background-color: #000;
+  border-radius: 3px;
+  content: " ";
+  display: block;
+  height: 5px;
+  margin: 7px 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.orangeCross {
+  position: absolute;
+  width: 30px;
+  cursor: pointer;
+  top: 11vh;
+}
+
+.orangeCross:after,
+.orangeCross:before,
+.orangeCross .closeOpenCross {
+  background-color: #000;
   border-radius: 3px;
   content: " ";
   display: block;
@@ -166,7 +249,10 @@ a {
 
 .mousepadMain {
   display: flex;
-  justify-content: center;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: -1;
   flex-direction: column;
   width: 80%;
 
@@ -180,11 +266,6 @@ a {
 
 h3 {
   margin-top: 50px;
-}
-
-.body-mousepad {
-  display: flex;
-  justify-content: center;
 }
 
 i {

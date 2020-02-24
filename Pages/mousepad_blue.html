@@ -8,12 +8,18 @@
     <title>Document</title>
   </head>
   <body class="body-mousepad">
-    <nav>
-      <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../contact.html">Contact</a></li>
-      </ul>
-    </nav>
+    <div class="container-nav">
+      <nav id="nav">
+          <ul>
+              <li><button><i class="fas fa-shopping-basket empty" id="shoppingCart"></i><p id="itemsInCart" class="totalItems-display">0</p></button></li>
+              <li class="button-li" id="clearCart">CE</li>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../index.html">Contact</a></li>
+              <li><a href="../support.html">Support</a></li>
+          </ul>
+          <div class="blueCross" onclick="openCloseBlueNav()"><div class="closeOpenCross"></div></div>
+      </nav id="nav">
+  </div>
     <main class="mousepadMain">
       <section class="big-img">
         <img src="../images/Mousepad_Blue.png" alt="" />
