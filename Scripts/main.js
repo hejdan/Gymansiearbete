@@ -53,7 +53,6 @@ window.onload = redPrice.textContent = itemPrices.redMousepad + "$";
 window.onload = greenPrice.textContent = itemPrices.greenMousepad + "$";
 window.onload = bluePrice.textContent = itemPrices.blueMousepad + "$";
 window.onload = orangePrice.textContent = itemPrices.orangeMousepad + "$";
-//window.onload = setInterval(getCrosses, 25);
 
 //Adding red mousepad to cart
 redBuy.addEventListener("click", () => {
@@ -86,7 +85,6 @@ greenBuy.addEventListener("click", () => {
       localStorage.storageTotalItems = 1;
     }
   }
-
   if (cart.totalItems > 0) {
     shoppingCart.classList.remove("empty");
     itemsInCart.classList.remove("totalItems-display");
