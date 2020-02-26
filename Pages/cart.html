@@ -18,10 +18,45 @@
             <div class="cross" onclick="openCloseNav()"><div class="closeOpenCross"></div></div>
         </nav id="nav">
     </div>
-    <main> 
+    <main>
         <div class="cartDiv">
-            <p>Total Items: <p id="totalItems"></p></p>
-            <p>Total Price: <p id="totalPrice"></p></p>
+            <div class="cartItems">
+                <div class="mousepad">
+                    <b>Item Name</b>
+                    <b>Price</b>
+                    <b>Quantity</b>
+                </div>
+                <div class="mousepad">
+                    <p>Red Mousepad</p>
+                    <p id="redMousepadPrice">20.99</p>
+                    <button>-</button><p id="redMousepadQuantity">1</p><button>+</button>
+                </div>
+                <div class="mousepad">
+                    <p>Green mousepad</p>
+                    <p id="greenMousepadPrice">20.99</p>
+                    <p id="greenMousepadQuantity">1</p>
+                </div>
+                <div class="mousepad">
+                    <p>Blue mousepad</p>
+                    <p id="blueMousepadPrice">20.99</p>
+                    <p id="blueMousepadQuantity">1</p>
+                </div>
+                <div class="mousepad">
+                    <p>Orange mousepad</p>
+                    <p id="orangeMousepadPrice">20.99</p>
+                    <p id="orangeMousepadQuantity">1</p>
+                </div>
+                <div class="mousepad">
+                    <p>Total:</p>
+                    <p id="totalPrice">20.99</p>
+                    <p id="totalItems">1</p>
+                </div>
+                
+            </div>
+            <div class="totalDiv">
+                <div class="total">
+                <button onclick="ClearCart()" class="clearCart">Clear Cart</button>
+            </div>
         </div>
     </main>
     <script src="../Scripts/main.js"></script>

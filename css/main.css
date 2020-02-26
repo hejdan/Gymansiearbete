@@ -249,11 +249,88 @@ button:hover {
   text-decoration: none;
 }
 
-.cartDiv {
-  display: flex;
+.cartDiv{
   width: 80vw;
-  height: auto;
+  height: 100vh;
+  display: flex;
+  background-color: var(--background-color);
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+}
+
+.cartItems{
+  display: flex;
+  width: 80vw;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  flex-direction: column;
+}
+
+.mousepad{
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+  width: 80vw;
+  background-color: var(--ul-background-color);
+  position: absolute;
+  transform: translate(0, -50%);
+}
+
+.mousepad:nth-child(odd){
+  background: white;  
+}
+
+.mousepad:nth-child(1){
+  bottom: 400px;
+}
+.mousepad:nth-child(2){
+  bottom: 350px;
+}
+.mousepad:nth-child(3){
+  bottom: 300px;
+}
+.mousepad:nth-child(4){
+  bottom: 250px;
+}
+.mousepad:nth-child(5){
+  bottom: 200px;
+}
+
+.mousepad:nth-child(6){
+  bottom: 150px;
+  border: 1px solid black;
+}
+
+.mousepad p, .mousepad b{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  margin: 0 100px 0 100px;   
+  position: relative;
+}
+
+
+.totalDiv {
+  display: flex;
+  width: 80vw;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: flex-end;
   overflow-x: visible;
+}
+
+.total{
+  display: flex;
+  flex-direction: row;
+}
+
+.clearCart{
+  padding: 15px;
+  background-color: var(--nav-background-color);
+  width: 100px;
+  height: 60px;
+  text-align: center;
 }

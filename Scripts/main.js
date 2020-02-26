@@ -28,6 +28,20 @@ let bluePrice = document.getElementById("bluePrice");
 let orangeBuy = document.getElementById("orangeBuy");
 let orangePrice = document.getElementById("orangePrice");
 
+
+//For Cart
+let redQuantity = document.getElementById("redMousepadQuantity")
+let cartRedPrice = document.getElementById("redMousepadPrice");
+
+let greenQuantity = document.getElementById("greenMousepadQuantity");
+let cartGreenPrice = document.getElementById("greenMousepadPrice");
+
+let blueQuantity = document.getElementById("blueMousepadQuantity");
+let cartBluePrice = document.getElementById("blueMousepadPrice");
+
+let orangeQuantity = document.getElementById("orangeMousepadQuantity");
+let cartOrangePrice = document.getElementById("orangeMousepadPrice");
+
 //Variable to clear cart
 let clearCart = document.getElementById("clearCart");
 
@@ -51,9 +65,23 @@ redBuy.addEventListener("click", () => {
 
   if (typeof(Storage) !== "undefined") {
     if (localStorage.storageTotalItems) {
-      localStorage.storageTotalItems = Number(localStorage.storageTotalItems)+1;
+      localStorage.storageTotalItems = Number(localStorage.storageTotalItems) + 1;
     } else {
       localStorage.storageTotalItems = 1;
+    }
+  }
+  if (typeof(Storage) !== "undefined") {
+    if (localStorage.storageTotalPrice) {
+      localStorage.storageTotalPrice = Number(localStorage.storageTotalPrice) + itemPrices.redMousepad;
+    } else {
+      localStorage.storageTotalPrice = 1;
+    }
+  }
+  if (typeof(Storage) !== "undefined") {
+    if (localStorage.storageTotalRedQuantity) {
+      localStorage.storageTotalRedQuantity = Number(localStorage.storageTotalRedQuantity) + 1;
+    } else {
+      localStorage.storageTotalRedQuantity = 1;
     }
   }
   if (cart.totalItems > 0) {
@@ -70,9 +98,23 @@ greenBuy.addEventListener("click", () => {
 
   if (typeof(Storage) !== "undefined") {
     if (localStorage.storageTotalItems) {
-      localStorage.storageTotalItems = Number(localStorage.storageTotalItems)+1;
+      localStorage.storageTotalItems = Number(localStorage.storageTotalItems) + 1;
     } else {
       localStorage.storageTotalItems = 1;
+    }
+  }
+  if (typeof(Storage) !== "undefined") {
+    if (localStorage.storageTotalPrice) {
+      localStorage.storageTotalPrice = Number(localStorage.storageTotalPrice) + itemPrices.greenMousepad;
+    } else {
+      localStorage.storageTotalPrice = 1;
+    }
+  }
+  if (typeof(Storage) !== "undefined") {
+    if (localStorage.storageTotalGreenQuantity) {
+      localStorage.storageTotalGreenQuantity = Number(localStorage.storageTotalGreenQuantity) + 1;
+    } else {
+      localStorage.storageTotalGreenQuantity = 1;
     }
   }
   if (cart.totalItems > 0) {
@@ -88,9 +130,23 @@ blueBuy.addEventListener("click", () => {
   cart.totalPrice += itemPrices.blueMousepad;
   if (typeof(Storage) !== "undefined") {
     if (localStorage.storageTotalItems) {
-      localStorage.storageTotalItems = Number(localStorage.storageTotalItems)+1;
+      localStorage.storageTotalItems = Number(localStorage.storageTotalItems) + 1;
     } else {
       localStorage.storageTotalItems = 1;
+    }
+  }
+  if (typeof(Storage) !== "undefined") {
+    if (localStorage.storageTotalPrice) {
+      localStorage.storageTotalPrice = Number(localStorage.storageTotalPrice) + itemPrices.blueMousepad;
+    } else {
+      localStorage.storageTotalPrice = 1;
+    }
+  }
+  if (typeof(Storage) !== "undefined") {
+    if (localStorage.storageTotalBlueQuantity) {
+      localStorage.storageTotalBlueQuantity = Number(localStorage.storageTotalBlueQuantity) + 1;
+    } else {
+      localStorage.storageTotalBlueQuantity = 1;
     }
   }
   if (cart.totalItems > 0) {
@@ -106,9 +162,23 @@ orangeBuy.addEventListener("click", () => {
   cart.totalPrice += itemPrices.orangeMousepad;
   if (typeof(Storage) !== "undefined") {
     if (localStorage.storageTotalItems) {
-      localStorage.storageTotalItems = Number(localStorage.storageTotalItems)+1;
+      localStorage.storageTotalItems = Number(localStorage.storageTotalItems) + 1;
     } else {
       localStorage.storageTotalItems = 1;
+    }
+  }
+  if (typeof(Storage) !== "undefined") {
+    if (localStorage.storageTotalPrice) {
+      localStorage.storageTotalPrice = Number(localStorage.storageTotalPrice) + itemPrices.orangeMousepad;
+    } else {
+      localStorage.storageTotalPrice = 1;
+    }
+  }
+  if (typeof(Storage) !== "undefined") {
+    if (localStorage.storageTotalOrangeQuantity) {
+      localStorage.storageTotalOrangeQuantity = Number(localStorage.storageTotalOrangeQuantity) + 1;
+    } else {
+      localStorage.storageTotalOrangeQuantity = 1;
     }
   }
   if (cart.totalItems > 0) {
@@ -125,7 +195,22 @@ function ClearCart(){
   shoppingCart.classList.add("empty");
   itemsInCart.classList.add("totalItems-display");
   itemsInCart.innerHTML = cart.totalItems;
-  localStorage.clear();
+  localStorage.storageTotalItems = 0;
+  localStorage.storageTotalPrice = 0;
+  localStorage.storageTotalRedQuantity = 0;
+  localStorage.storageTotalGreenQuantity = 0;
+  localStorage.storageTotalBlueQuantity = 0;
+  localStorage.storageTotalOrangeQuantity = 0;
+  if(window.location.pathname == "/Pages/cart.html"){
+    showCartTotalItems.innerHTML = 0;
+    showCartTotalPrice.innerHTML = 0 + "$";
+    redQuantity.innerHTML = 0;
+    greenQuantity.innerHTML = 0;
+    blueQuantity.innerHTML = 0;
+    orangeQuantity.innerHTML = 0;
+  }
+  checkCart();
+
 }
 
 //Opening and closing nav
@@ -134,7 +219,7 @@ cross.addEventListener("click", () => {
 });
 
 function openCloseNav() {
-  if (navOpen === false) {
+  if (navOpen === false) {  
       cross.classList.add("close");
       openNav();
       navOpen = true;
@@ -158,23 +243,37 @@ function checkCart(){
     shoppingCart.classList.remove("empty");
     itemsInCart.classList.remove("totalItems-display");
     itemsInCart.innerHTML = cart.totalItems;
-
   }
 }
 
 function Init(){
+  closeNav();
 if(window.location.pathname == "/Pages/cart.html"){
-    
+  checkCart();
     showCartTotalItems.innerText = cart.totalItems;
-    checkCart();
+    showCartTotalPrice.innerText = cart.totalPrice + "$";
+
+    redQuantity.innerHTML = localStorage.getItem("storageTotalRedQuantity");
+    cartRedPrice.innerHTML = itemPrices.redMousepad + "$";
+
+    greenQuantity.innerHTML = localStorage.getItem("storageTotalGreenQuantity");
+    cartGreenPrice.innerHTML = itemPrices.greenMousepad + "$";
+
+    blueQuantity.innerHTML = localStorage.getItem("storageTotalBlueQuantity");
+    cartBluePrice.innerHTML = itemPrices.blueMousepad + "$";
+    
+    orangeQuantity.innerHTML = localStorage.getItem("storageTotalOrangeQuantity");
+    cartOrangePrice.innerHTML = itemPrices.orangeMousepad + "$";
+
 }
 else{
-closeNav();
+
 checkCart();
 redPrice.textContent = itemPrices.redMousepad + "$";
 greenPrice.textContent = itemPrices.greenMousepad + "$";
 orangePrice.textContent = itemPrices.orangeMousepad + "$";
 bluePrice.textContent = itemPrices.blueMousepad + "$";
+
 }
 }
 
