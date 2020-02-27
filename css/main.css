@@ -277,14 +277,17 @@ button:hover {
   background-color: var(--ul-background-color);
   position: absolute;
   transform: translate(0, -50%);
+  justify-content: center;
+  line
 }
 
 .mousepad:nth-child(odd){
-  background: white;  
+  background-color: white;  
 }
 
 .mousepad:nth-child(1){
   bottom: 400px;
+  border: 1px solid black;
 }
 .mousepad:nth-child(2){
   bottom: 350px;
@@ -303,7 +306,7 @@ button:hover {
   bottom: 150px;
   border: 1px solid black;
 }
-
+/*
 .mousepad p, .mousepad b{
   padding-top: 10px;
   padding-bottom: 10px;
@@ -311,7 +314,23 @@ button:hover {
   margin: 0 100px 0 100px;   
   position: relative;
 }
+*/
 
+.mousepad ul{
+  text-decoration: none;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  width: 80vw;
+}
+
+.mousepad li{
+  display: flex;
+  width: 80vw;
+  padding: 1.4vh;
+  justify-content: space-evenly;
+  align-items: center;
+}
 
 .totalDiv {
   display: flex;
@@ -327,10 +346,74 @@ button:hover {
   flex-direction: row;
 }
 
+.cartButtons{
+  width: 80vw;
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-bottom:  55px;  
+}
+
 .clearCart{
   padding: 15px;
-  background-color: var(--nav-background-color);
+  background-color: red;
   width: 100px;
   height: 60px;
+  text-align: center;  
+  border-radius: 0 5px 5px 0;
+}
+
+.purchase{
+  padding: 15px;
+  background-color: limegreen;
+  width: 100px;
+  height: 60px;
+  border-radius: 5px 0 0 5px;
   text-align: center;
+
+}
+
+.mainCart{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.PurchasetextDiv{
+  text-align: center;
+  padding: 50px 20px 50px 20px;
+  background: white;
+  border-radius: 5px;
+}
+
+.textDiv{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 50px 20px 50px 20px;
+  background: white;
+  width: 80vw;
+  height: 100vh;
+}
+
+.contactDetails{
+  list-style: none;
+  text-align: left;
+  margin: 10px;
+}
+
+.contact{
+  position: absolute;
+  bottom: 0;
+  left: 10vw;
+justify-content: flex-start;
+align-items: flex-end;
+background: white;
+
 }

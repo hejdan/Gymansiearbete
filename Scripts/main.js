@@ -250,8 +250,11 @@ function Init(){
   closeNav();
 if(window.location.pathname == "/Pages/cart.html"){
   checkCart();
+
+    var intTotalPrice = parseFloat(cart.totalPrice);
+
     showCartTotalItems.innerText = cart.totalItems;
-    showCartTotalPrice.innerText = cart.totalPrice + "$";
+    showCartTotalPrice.innerText = intTotalPrice.toFixed(2) + "$";
 
     redQuantity.innerHTML = localStorage.getItem("storageTotalRedQuantity");
     cartRedPrice.innerHTML = itemPrices.redMousepad + "$";
@@ -265,6 +268,13 @@ if(window.location.pathname == "/Pages/cart.html"){
     orangeQuantity.innerHTML = localStorage.getItem("storageTotalOrangeQuantity");
     cartOrangePrice.innerHTML = itemPrices.orangeMousepad + "$";
 
+}
+else if(window.location.pathname == "/Pages/purchase.html"){
+  let date = document.getElementById("date");
+  let dateDay = new Date().getDate();
+  let dateMonth = new Date().getMonth();
+  let dateYear = new Date().getFullYear();
+  date.innerHTML = "Order created:  " + dateYear +"-"+dateMonth+"-"+dateDay;
 }
 else{
 
@@ -281,4 +291,6 @@ function goToCart(){
   location.href = "../Pages/cart.html";
 }
 
-
+function commitBuy(){
+  location.href = "../Pages/purchase.html"
+}

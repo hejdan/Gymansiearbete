@@ -18,44 +18,62 @@
             <div class="cross" onclick="openCloseNav()"><div class="closeOpenCross"></div></div>
         </nav id="nav">
     </div>
-    <main>
+    <main class="mainCart">
         <div class="cartDiv">
             <div class="cartItems">
                 <div class="mousepad">
-                    <b>Item Name</b>
-                    <b>Price</b>
-                    <b>Quantity</b>
+                <ul>
+                    <li>Item Name</li>
+                    <li><p>Price</p></li>
+                    <li><p>Quantity</p></li>
+                </ul>
                 </div>
                 <div class="mousepad">
-                    <p>Red Mousepad</p>
-                    <p id="redMousepadPrice">20.99</p>
-                    <button>-</button><p id="redMousepadQuantity">1</p><button>+</button>
+                    <ul>
+                        <li>Red Mousepad</li>
+                        <li id="redMousepadPrice"><p></p></li>
+                        <li id="redMousepadQuantity"><p></p></li>
+                    </ul>
                 </div>
                 <div class="mousepad">
-                    <p>Green mousepad</p>
-                    <p id="greenMousepadPrice">20.99</p>
-                    <p id="greenMousepadQuantity">1</p>
+                    <ul>
+                        <li>Green Mousepad</li>
+                        <li id="greenMousepadPrice"><p></p></li>
+                        <li id="greenMousepadQuantity"><p></p></li>
+                    </ul>
+                </div>
+
+                <div class="mousepad"> 
+                <ul>
+                    <li>Blue Mousepad</li>
+                    <li id="blueMousepadPrice"><p></p></li>
+                    <li id="blueMousepadQuantity"><p></p></li>
+                </ul>
+                </div>
+                
+                <div class="mousepad">
+                    <ul>
+                        <li>Orange Mousepad</li>
+                        <li id="orangeMousepadPrice"><p></p></li>
+                        <li id="orangeMousepadQuantity"><p></p></li>
+                    </ul>
                 </div>
                 <div class="mousepad">
-                    <p>Blue mousepad</p>
-                    <p id="blueMousepadPrice">20.99</p>
-                    <p id="blueMousepadQuantity">1</p>
-                </div>
-                <div class="mousepad">
-                    <p>Orange mousepad</p>
-                    <p id="orangeMousepadPrice">20.99</p>
-                    <p id="orangeMousepadQuantity">1</p>
-                </div>
-                <div class="mousepad">
-                    <p>Total:</p>
-                    <p id="totalPrice">20.99</p>
-                    <p id="totalItems">1</p>
+                <ul>
+                    <li>Total:</li>
+                    <li id="totalPrice"><p></p></li>
+                    <li id="totalItems"><p></p></li>
+                </ul>
                 </div>
                 
             </div>
-            <div class="totalDiv">
-                <div class="total">
-                <button onclick="ClearCart()" class="clearCart">Clear Cart</button>
+            <div class="cartButtons">
+                <div class="totalDiv">
+                    <button onclick="ClearCart()" class="clearCart">Empty Cart</button>
+                </div>
+                <div class="purchase">
+                    <button onclick="commitBuy()">Proceed to checkout</button>
+                </div>
             </div>
         </div>
     </main>
