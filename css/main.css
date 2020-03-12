@@ -7,7 +7,6 @@
   outline: none;
   font-family: "Roboto", sans-serif;
   user-select: none;
-
   /*COLORS*/
   --text-color: #16a085;
   --background-color: #f5f6fa;
@@ -30,7 +29,8 @@ body {
 
 nav {
   position: fixed;
-  width: 50vw;
+  width: auto;
+  padding: 15px;
   height: 10vh;
   display: flex;
   justify-content: center;
@@ -39,6 +39,12 @@ nav {
   border-radius: 0 0 10px 10px;
   transition: top 0.2s ease-in-out;
   font-weight: bold;
+}
+
+nav img{
+  border-radius: 5px;
+  width: 40px;
+  height: auto;
 }
 
 nav ul {
@@ -112,6 +118,10 @@ main {
   background-color: #ced6e0;
 }
 
+body-mousepad{
+  background-color: var(--background-color);
+}
+
 .items {
   display: flex;
   width: 80vw;
@@ -164,6 +174,7 @@ a {
   display: flex;
   justify-content: center;
   margin-top: 80px;
+  background: none;
 }
 
 .big-img img {
@@ -396,10 +407,12 @@ button:hover {
   justify-content: center;
   align-items: center;
   text-align: center;
+  flex-direction: column;
   padding: 50px 20px 50px 20px;
   background: white;
   width: 80vw;
   height: 100vh;
+  
 }
 
 .contactDetails{
@@ -412,8 +425,41 @@ button:hover {
   position: absolute;
   bottom: 0;
   left: 10vw;
-justify-content: flex-start;
-align-items: flex-end;
-background: white;
+  justify-content: flex-start;
+  align-items: flex-end;
+  background: white;
+}
 
+section{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ced6e0;
+}
+
+.support{
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  height: 100vh;
+  background: white;
+}
+
+.supportTextDiv{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 50px 20px 50px 20px; 
+  width: 80vw;
+  height: 100vh;  
+  margin-top: 45px;
+}
+
+.supportTextDiv img,
+.textDiv img{
+  width: 80vw;
+  height: auto;
 }

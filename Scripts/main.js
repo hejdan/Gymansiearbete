@@ -292,5 +292,5 @@ function goToCart(){
 }
 
 function commitBuy(){
-  location.href = "../Pages/purchase.html"
+  location.href = "../Pages/purchase.html";
 }
